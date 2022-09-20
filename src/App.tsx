@@ -1,5 +1,5 @@
 import { SearchWithDropdown } from "./Components";
-import {} from "./Components/SearchWithDropdown/useSearchWithDropdown";
+import { AddNewProduct } from "./Components/AddNewProduct";
 import "./App.css";
 
 const searchData = [
@@ -23,6 +23,7 @@ const searchData = [
 function App() {
   return (
     <div className="App">
+      <AddNewProduct/>
       <SearchWithDropdown listItems={searchData} />
     </div>
   );

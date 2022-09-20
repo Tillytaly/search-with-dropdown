@@ -1,0 +1,31 @@
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  padding: 0.5rem 0.5rem;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  gap: 0.5rem;
+}
+
+.prices {
+  display: flex;
+  font-size: 1.6rem;
+  gap: 1rem;
+}
+
+.productNameContainer {
+  font-size: 1.8rem;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.newPrice {
+  font-weight: 600;
+}
+
+.dropdownItem:last-child {
+  border-bottom: 1px solid lightgrey;
+}

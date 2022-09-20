@@ -1,0 +1,57 @@
+//576
+@use "../../Sass/Variables" as *;
+
+.searchWithDropdown {
+  padding: 1rem;
+  min-width: 30rem;
+  width: 40rem;
+}
+
+.inputBackground{
+  height: 5rem;
+  padding: 0.5rem;
+  background-color: rgb(206, 197, 197);
+}
+.inputContainer {
+ 
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: right;
+  padding: 0.5rem 0.5rem;
+  background-color: $inputBackground;
+  margin-bottom: 0.2rem;
+  border: 1px solid $darkGrey;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: $darkGrey;
+  }
+}
+
+.input {
+  width: 85%;
+  border: none;
+  height: 3rem;
+  font-size: 2rem;
+  background-color: $inputBackground;
+
+  &::placeholder {
+    font-size: 2rem;
+    color: $darkGrey;
+  }
+}
+
+.iconContainer {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: $darkGrey;
+}

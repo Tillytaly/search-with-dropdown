@@ -1,0 +1,1 @@
+export { IconContextProvider } from "./ReactIconContext";

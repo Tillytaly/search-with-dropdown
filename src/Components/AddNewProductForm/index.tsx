@@ -3,10 +3,18 @@ import { ProductData } from "../../Types";
 import { useFormik } from "formik";
 import { formikSchema } from "../../Validation";
 import { CrossBtn } from "../CrossBtn";
+import { Wrapper } from "../Wrapper";
 import styles from "./AddNewProductForm.module.scss";
 
-const { form, formContainer, button, title, formHeader, buttonContainer, titleContainer } =
-  styles;
+const {
+  form,
+  formContainer,
+  button,
+  title,
+  formHeader,
+  buttonContainer,
+  titleContainer,
+} = styles;
 
 const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
   const {
@@ -45,16 +53,15 @@ const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
   });
 
   return (
-    <div className={formContainer}>
+    <Wrapper className={formContainer}>
       <form onSubmit={handleSubmit} className={form}>
         <div className={formHeader}>
           <div className={buttonContainer}>
             <CrossBtn onClick={onCloseForm} />
           </div>
           <div className={titleContainer}>
-          <h2 className={title}>New product</h2>
+            <h2 className={title}>New product</h2>
           </div>
-     
         </div>
         <CustomInput
           id="name"
@@ -94,7 +101,7 @@ const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
           Submit
         </button>
       </form>
-    </div>
+    </Wrapper>
   );
 };
 

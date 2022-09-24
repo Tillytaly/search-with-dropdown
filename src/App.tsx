@@ -24,10 +24,10 @@ const initialSearchData = [
 ];
 
 function App() {
-  const [searchData, setSearchData] = useState<ProductData[]>(initialSearchData);
+  const [searchData, setSearchData] =
+    useState<ProductData[]>(initialSearchData);
 
-
-console.log(searchData)
+  console.log(searchData);
   return (
     <div className="App">
       <AddNewProduct onSubmitData={setSearchData} />

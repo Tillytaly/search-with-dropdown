@@ -1,7 +1,7 @@
 .crossBtn {
   padding: 20px 15px;
   width: fit-content;
-  height:fit-content;
+  height: fit-content;
 }
 
 .cross {
@@ -29,8 +29,5 @@
 
 .crossBtn:hover .cross {
   transition: 0.2s;
-  transform: rotate(315deg) 
-  
+  transform: rotate(315deg);
 }
-
-

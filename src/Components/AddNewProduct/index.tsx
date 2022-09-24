@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { AddNewProductForm } from "../AddNewProductForm";
+import { Wrapper } from "../Wrapper";
+import styles from "./AddNewProduct.module.scss";
+
+const { buttonContainer, button } = styles;
+
 const AddNewProduct = ({ onSubmitData }: any) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -18,11 +23,11 @@ const AddNewProduct = ({ onSubmitData }: any) => {
   }
 
   return (
-    <div>
-      <button onClick={openForm} type="button">
+    <Wrapper>
+      <button onClick={openForm} type="button" className={button}>
         Add New Product
       </button>
-    </div>
+    </Wrapper>
   );
 };
 

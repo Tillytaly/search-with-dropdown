@@ -5,7 +5,8 @@ import { formikSchema } from "../../Validation";
 import { CrossBtn } from "../CrossBtn";
 import styles from "./AddNewProductForm.module.scss";
 
-const { form, formContainer, button, title, formHeader, titleContainer } = styles;
+const { form, formContainer, button, title, formHeader, buttonContainer, titleContainer } =
+  styles;
 
 const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
   const {
@@ -47,12 +48,13 @@ const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
     <div className={formContainer}>
       <form onSubmit={handleSubmit} className={form}>
         <div className={formHeader}>
-          <div className={titleContainer}>
-            <h2 className={title}>New product</h2>
+          <div className={buttonContainer}>
+            <CrossBtn onClick={onCloseForm} />
           </div>
-          
-          <CrossBtn onClick={onCloseForm} />
-          
+          <div className={titleContainer}>
+          <h2 className={title}>New product</h2>
+          </div>
+     
         </div>
         <CustomInput
           id="name"

@@ -19,7 +19,6 @@ const SearchWithDropdown = ({ listItems }: any) => {
 
   return (
     <Wrapper className={searchWithDropdown}>
-      <div className={inputBackground}>
         <div className={inputContainer}>
           <label htmlFor="searchField"></label>
           <input
@@ -34,7 +33,6 @@ const SearchWithDropdown = ({ listItems }: any) => {
             </IconContextProvider>
           </div>
         </div>
-      </div>
 
       <DropdownList listItems={filteredItemList} />
     </Wrapper>

@@ -23,7 +23,7 @@ const AddNewProduct = ({ onSubmitData }: any) => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper className={buttonContainer}>
       <button onClick={openForm} type="button" className={button}>
         Add New Product
       </button>

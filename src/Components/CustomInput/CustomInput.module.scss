@@ -1,21 +1,48 @@
 @use "../../Sass/Variables" as *;
 
-.customInputContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    margin-bottom: 2rem;
+.customInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 2rem;
 }
 
-.customInput{
-    border-radius: 0.8rem;
-    line-height: 3rem;
-    font-size: 1.6rem;
-    border: 1px solid $darkGrey;
-    outline: none;
-    width: 20rem;
+.customInput {
+  order: 2;
+  border-radius: 0.8rem;
+  line-height: 3rem;
+  font-size: 1.6rem;
+  border: 1px solid $darkGrey;
+  outline: none;
+  width: 20rem;
+
+  &:active,
+  &:hover,
+  &:focus {
+    border-color: black;
+  }
+
+  &:active + .customInputLabel,
+  &:focus + .customInputLabel,
+  &:hover + .customInputLabel {
+    font-weight: bold;
+  }
 }
 
-.customInputLabel{
-    font-size: 1.8rem;
+.customInputLabel {
+  font-size: 1.8rem;
+}
+
+.error {
+  color: $error;
+  font-size: 1.4rem;
+  order: 3;
+}
+
+.inputError {
+  border-color: $error;
+}
+
+.inputError + .customInputLabel {
+  color: $error;
 }

@@ -1,12 +1,14 @@
 //576
 @use "../../Sass/Variables" as *;
 
-.inputBackground {
+.searchWithDropdown {
   height: 5rem;
   padding: 0.5rem;
   background-color: rgb(206, 197, 197);
   min-width: 30rem;
+  border-radius: 0.8rem;
 }
+
 .inputContainer {
   width: 100%;
   border-radius: 2rem;
@@ -17,10 +19,18 @@
   margin-bottom: 0.2rem;
   border: 1px solid $darkGrey;
 
-  &:active,
-  &:focus,
-  &:hover {
-    border-color: $darkGrey;
+  &:focus-within .input::placeholder {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: black;
+  }
+
+  &:focus-within .icon {
+    color: black;
+  }
+
+  &:focus-within {
+    border-color: black;
   }
 }
 

@@ -1,5 +1,5 @@
 import styles from "./CustomInput.module.scss";
-const { customInputContainer, customInput, customInputLabel } = styles;
+const { customInputContainer, customInput, customInputLabel, error, inputError } = styles;
 const CustomInput = ({
   id,
   type,
@@ -15,19 +15,19 @@ const CustomInput = ({
 
   return (
     <div className={customInputContainer}>
-      <label htmlFor={id} className={customInputLabel}>
-        {label}
-      </label>
       <input
         id={id}
         type={type}
         placeholder={placeholder}
-        className={customInput}
+        className={`${customInput} ${shouldDisplayErrorMessage ? inputError : ''}`}
         onChange={onChange}
         value={value}
         onBlur={onBlur}
       ></input>
-      {shouldDisplayErrorMessage && <p>{errorMessage}</p>}
+      <label htmlFor={id} className={customInputLabel}>
+        {label}
+      </label>
+      {shouldDisplayErrorMessage && <p className={error}>{errorMessage}</p>}
     </div>
   );
 };

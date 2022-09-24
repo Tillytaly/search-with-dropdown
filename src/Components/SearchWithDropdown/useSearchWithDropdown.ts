@@ -37,14 +37,12 @@ function filterWith(obj: {}[] | [], phrase: string | number) {
       );
 }
 
-function useSearchWithDropdown<T extends Object>(
-  itemList: T[],
-) {
+function useSearchWithDropdown<T extends Object>(itemList: T[]) {
   const [searchedPhrase, setSearchedPhrase] = useState("");
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
-    if(value.trim().length === 0) return;
+    if (value.trim().length === 0) return;
 
     setSearchedPhrase(value);
   }, []);

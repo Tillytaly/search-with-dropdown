@@ -2,18 +2,18 @@
 @use "../../Sass/Variables" as *;
 
 .searchWithDropdown {
-  padding: 1rem;
   min-width: 30rem;
-  width: 40rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
-.inputBackground{
+.inputBackground {
   height: 5rem;
   padding: 0.5rem;
   background-color: rgb(206, 197, 197);
+  min-width: 30rem;
 }
 .inputContainer {
- 
   width: 100%;
   border-radius: 2rem;
   display: flex;

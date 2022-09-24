@@ -11,6 +11,18 @@
   background-color: $inputBackground;
 }
 
+.formHeader{
+  width: 100%;
+   display: flex;
+  align-items: center;
+   justify-content: space-between;
+}
+
+.titleContainer{
+  width: 90%;
+  text-align: center;
+}
+
 .form {
   display: flex;
   flex-direction: column;

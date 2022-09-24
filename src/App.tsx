@@ -1,8 +1,11 @@
+import { useState } from "react";
+import { ProductData } from "./Types";
 import { SearchWithDropdown } from "./Components";
+import { AddNewProductForm } from "./Components/AddNewProductForm";
 import { AddNewProduct } from "./Components/AddNewProduct";
 import "./App.css";
 
-const searchData = [
+const initialSearchData = [
   {
     name: "Fixed TOC - table of contents for WordPress plugin",
     regularPrice: 20,
@@ -21,9 +24,13 @@ const searchData = [
 ];
 
 function App() {
+  const [searchData, setSearchData] = useState<ProductData[]>(initialSearchData);
+
+
+console.log(searchData)
   return (
     <div className="App">
-      <AddNewProduct/>
+      <AddNewProduct onSubmitData={setSearchData} />
       <SearchWithDropdown listItems={searchData} />
     </div>
   );

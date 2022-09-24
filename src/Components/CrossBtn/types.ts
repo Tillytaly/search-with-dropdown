@@ -1,3 +1,3 @@
 export type TCrossBtn = {
-    onClick: () => void
-}
+  onClick: () => void;
+};

@@ -1,3 +1,5 @@
+import { PropsWithOnSubmitData } from "../../Types";
+
 interface inputState {
   value: string;
   isValid: boolean | null;
@@ -19,3 +21,7 @@ export interface Action {
 }
 
 export type Reducer = (state: InitialState, action: Action) => InitialState;
+
+export interface AddNewProductFormProps extends PropsWithOnSubmitData {
+  onCloseForm: () => void;
+}

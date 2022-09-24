@@ -4,6 +4,7 @@ import { IconContextProvider } from "../../Contexts";
 import { DropdownList } from "../DropdownList";
 import { useSearchWithDropdown } from "./useSearchWithDropdown";
 import { Wrapper } from "../Wrapper";
+import { SearchWithDropdownProps } from "./types";
 
 const {
   searchWithDropdown,
@@ -14,25 +15,25 @@ const {
   inputBackground,
 } = styles;
 
-const SearchWithDropdown = ({ listItems }: any) => {
+const SearchWithDropdown = ({ listItems }: SearchWithDropdownProps) => {
   const { onChange, filteredItemList } = useSearchWithDropdown(listItems);
 
   return (
     <Wrapper className={searchWithDropdown}>
-        <div className={inputContainer}>
-          <label htmlFor="searchField"></label>
-          <input
-            className={input}
-            onChange={onChange}
-            id="searchField"
-            placeholder="search"
-          ></input>
-          <div className={iconContainer}>
-            <IconContextProvider className={icon}>
-              <RiSearchLine />
-            </IconContextProvider>
-          </div>
+      <div className={inputContainer}>
+        <label htmlFor="searchField"></label>
+        <input
+          className={input}
+          onChange={onChange}
+          id="searchField"
+          placeholder="search"
+        ></input>
+        <div className={iconContainer}>
+          <IconContextProvider className={icon}>
+            <RiSearchLine />
+          </IconContextProvider>
         </div>
+      </div>
 
       <DropdownList listItems={filteredItemList} />
     </Wrapper>

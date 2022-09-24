@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { AddNewProductForm } from "../AddNewProductForm";
 import { Wrapper } from "../Wrapper";
+import { AddNewProductProps } from "./types";
 import styles from "./AddNewProduct.module.scss";
 
 const { buttonContainer, button } = styles;
 
-const AddNewProduct = ({ onSubmitData }: any) => {
+const AddNewProduct = ({ onSubmitData }: AddNewProductProps) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const openForm = () => {

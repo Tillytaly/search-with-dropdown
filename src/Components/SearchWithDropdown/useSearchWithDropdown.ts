@@ -19,9 +19,7 @@ const filterObjectCallback = (value: any, phrase: string): boolean => {
   return regExpToFindPhrase(phrase).test(value);
 };
 
-function filterWith(obj: {}[] | [], phrase: string | number) {
-  // co sie stannie jak NaN.toString()
-  // const validPhrase = phrase.toString()
+function filterWith(obj: any[] | [], phrase: string | number) {
 
   if (typeof phrase === "string") {
     if (phrase.length < 2) return [];

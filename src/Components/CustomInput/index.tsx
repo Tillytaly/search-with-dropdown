@@ -1,5 +1,13 @@
 import styles from "./CustomInput.module.scss";
-const { customInputContainer, customInput, customInputLabel, error, inputError } = styles;
+import { CustomInputProps } from "./types";
+const {
+  customInputContainer,
+  customInput,
+  customInputLabel,
+  error,
+  inputError,
+} = styles;
+
 const CustomInput = ({
   id,
   type,
@@ -10,7 +18,7 @@ const CustomInput = ({
   value,
   onBlur,
   touched,
-}: any) => {
+}: CustomInputProps) => {
   const shouldDisplayErrorMessage = touched && errorMessage;
 
   return (
@@ -19,7 +27,9 @@ const CustomInput = ({
         id={id}
         type={type}
         placeholder={placeholder}
-        className={`${customInput} ${shouldDisplayErrorMessage ? inputError : ''}`}
+        className={`${customInput} ${
+          shouldDisplayErrorMessage ? inputError : ""
+        }`}
         onChange={onChange}
         value={value}
         onBlur={onBlur}

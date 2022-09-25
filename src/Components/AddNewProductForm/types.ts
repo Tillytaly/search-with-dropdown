@@ -22,6 +22,6 @@ export interface Action {
 
 export type Reducer = (state: InitialState, action: Action) => InitialState;
 
-export interface AddNewProductFormProps extends PropsWithOnSubmitData {
+export interface AddNewProductFormProps  {
   onCloseForm: () => void;
 }

@@ -1,19 +1,25 @@
 import { DropdownItem } from "../DropdownItem";
 import { v4 as uuid } from "uuid";
-import { DropdownListProps } from "./types";
-const DropdownList = ({ listItems }: DropdownListProps) => {
-  // if(listItems.length === 0){
-  //   return(
-  //     <>
-  //     <p>No products found.</p>
-  //     </>
-  //   )
-  // }
+import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
+const DropdownList = () => {
+  const { itemListToDisplay, searchedPhrase } = useSearchWithDropdownContext();
+
+  const areNoProductsFound =
+    itemListToDisplay.length === 0 && searchedPhrase.length > 2;
+
+  if (areNoProductsFound) {
+    return (
+      <>
+        <p>No products found.</p>
+      </>
+    );
+  }
   return (
     <>
-      {listItems.map(({ name, regularPrice, salePrice }) => (
+      {itemListToDisplay.map(({ id, name, regularPrice, salePrice }) => (
         <DropdownItem
           key={uuid()}
+          id={id}
           title={name}
           regularPrice={regularPrice}
           salePrice={salePrice}

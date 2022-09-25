@@ -1,5 +1,6 @@
 export interface DropdownItemProps {
-  title: string;
+  id: string;
+    title: string;
   regularPrice: number;
   salePrice: number;
 }

@@ -1,9 +1,11 @@
 import { CustomInput } from "../CustomInput";
-import { ProductData } from "../../Types";
 import { useFormik } from "formik";
 import { formikSchema } from "../../Validation";
 import { CrossBtn } from "../CrossBtn";
 import { Wrapper } from "../Wrapper";
+import { AddNewProductFormProps } from "./types";
+import { v4 as uuid } from "uuid";
+import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
 import styles from "./AddNewProductForm.module.scss";
 
 const {
@@ -18,7 +20,9 @@ const {
   formFooter,
 } = styles;
 
-const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
+const AddNewProductForm = ({ onCloseForm }: AddNewProductFormProps) => {
+  const { addItemToList } = useSearchWithDropdownContext();
+
   const {
     handleChange,
     handleBlur,
@@ -45,10 +49,10 @@ const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
     validationSchema: formikSchema,
     onSubmit: (values, { resetForm }) => {
       const { name, regularPrice, salePrice } = values;
-      onSubmitData((prevData: ProductData[]) => [
-        ...prevData,
-        { name, regularPrice, salePrice },
-      ]);
+      const id = uuid();
+      const newProduct = { id, name, regularPrice, salePrice }
+
+      addItemToList(newProduct);
       resetForm();
     },
     validateOnChange: false,

@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { Component } from "react";
 import styles from "./CrossBtn.module.scss";
 import { TCrossBtn } from "./types";
 const { crossBtn, cross } = styles;

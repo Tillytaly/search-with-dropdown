@@ -1,5 +1,8 @@
 import { ChangeEvent, useCallback, useMemo, useState } from "react";
-
+import { ProductData } from "../../Types";
+interface ObjectWithId {
+  id: string;
+}
 const regExpToFindPhrase = (phrase: string): RegExp =>
   new RegExp(`${phrase}`, "gi");
 
@@ -34,8 +37,26 @@ function filterWith(obj: any[] | [], phrase: string | number) {
       );
 }
 
-function useSearchWithDropdown<T extends Object>(itemList: T[]) {
+function useSearchWithDropdown<T extends ObjectWithId>(itemList: T[]) {
   const [searchedPhrase, setSearchedPhrase] = useState("");
+  const [filteredItemList, setFilteredItemList] = useState(itemList);
+
+  const addItemToList = useCallback((newProduct: T) => {
+    setFilteredItemList((prevItemList) => [...prevItemList, newProduct]);
+  }, []);
+
+  const removeItemFromList = useCallback((idOfItemToRemove: string) => {
+    const copiedArray = [...filteredItemList];
+    const indexOfItemToRemove = copiedArray.findIndex(
+      ({ id }) => id === idOfItemToRemove
+    );
+
+    if (indexOfItemToRemove === -1) return;
+
+    const arrayWithoutItemToRemove = copiedArray.splice(indexOfItemToRemove, 1);
+
+    setFilteredItemList(arrayWithoutItemToRemove);
+  }, []);
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -44,11 +65,11 @@ function useSearchWithDropdown<T extends Object>(itemList: T[]) {
     setSearchedPhrase(value);
   }, []);
 
-  const filteredItemList = useMemo(() => {
-    return filterWith(itemList, searchedPhrase);
-  }, [itemList, searchedPhrase]);
+  const itemListToDisplay = useMemo(() => {
+    return filterWith(filteredItemList, searchedPhrase);
+  }, [filteredItemList, searchedPhrase]);
 
-  return { filteredItemList, onChange };
+  return { itemListToDisplay, onChange, searchedPhrase, removeItemFromList };
 }
 
 export { useSearchWithDropdown };

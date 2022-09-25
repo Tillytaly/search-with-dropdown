@@ -1,7 +1,18 @@
-import styles from "./DropdownItem.module.scss";
+import { FaTrashAlt } from "react-icons/fa";
+import { IconContextProvider } from "../../Contexts";
 import { DropdownItemProps } from "./types";
-const { dropdownItem, productNameContainer, prices, oldPrice, newPrice } =
-  styles;
+import styles from "./DropdownItem.module.scss";
+
+const {
+  dropdownItem,
+  productNameContainer,
+  prices,
+  oldPrice,
+  newPrice,
+  reactIcon,
+  flexContainer,
+  iconContainer,
+} = styles;
 
 const DropdownItem = ({
   title,
@@ -13,12 +24,19 @@ const DropdownItem = ({
       <div className={productNameContainer}>
         <p>{title}</p>
       </div>
-      <div className={prices}>
-        <div>
-          <p className={oldPrice}>{`$${regularPrice}`}</p>
+      <div className={flexContainer}>
+        <div className={prices}>
+          <div>
+            <p className={oldPrice}>{`$${regularPrice}`}</p>
+          </div>
+          <div>
+            <p className={newPrice}>{`$${salePrice}`}</p>
+          </div>
         </div>
-        <div>
-          <p className={newPrice}>{`$${salePrice}`}</p>
+        <div className={iconContainer}>
+          <IconContextProvider className={reactIcon}>
+            <FaTrashAlt />
+          </IconContextProvider>
         </div>
       </div>
     </div>

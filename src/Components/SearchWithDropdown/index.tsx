@@ -5,18 +5,13 @@ import { DropdownList } from "../DropdownList";
 import { useSearchWithDropdown } from "./useSearchWithDropdown";
 import { Wrapper } from "../Wrapper";
 import { SearchWithDropdownProps } from "./types";
+import { useRef } from "react";
 
-const {
-  searchWithDropdown,
-  inputContainer,
-  input,
-  iconContainer,
-  icon,
-  inputBackground,
-} = styles;
+const { searchWithDropdown, inputContainer, input, iconContainer, icon } =
+  styles;
 
 const SearchWithDropdown = ({ listItems }: SearchWithDropdownProps) => {
-  const { onChange, filteredItemList } = useSearchWithDropdown(listItems);
+  const { filteredItemList, onChange } = useSearchWithDropdown(listItems);
 
   return (
     <Wrapper className={searchWithDropdown}>

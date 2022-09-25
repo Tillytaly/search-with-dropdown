@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "../../Sass/Variables" as *;
 .wrapper {
   width: 80%;
   min-width: 30rem;
@@ -6,4 +8,17 @@
   -webkit-box-shadow: 5px 8px 16px -8px rgba(103, 103, 105, 0.63);
   -moz-box-shadow: 5px 8px 16px -8px rgba(103, 103, 105, 0.63);
   box-shadow: 5px 8px 16px -8px rgba(103, 103, 105, 0.63);
+}
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .wrapper {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .wrapper {
+    width: 71rem;
+  }
 }

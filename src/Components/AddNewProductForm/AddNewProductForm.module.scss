@@ -1,4 +1,5 @@
 @use "../../Sass//Variables" as *;
+@use "sass:map";
 
 .formContainer {
   color: rgba(21, 19, 19, 0.704);
@@ -11,7 +12,7 @@
   width: 100%;
 }
 
-.buttonContainer {
+.FHButtonContainer {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -36,8 +37,46 @@
   width: 20rem;
   margin: 2rem;
   font-size: 2.2rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: 1px solid $darkGrey;
   background-color: rgb(206, 197, 197);
   height: 3.5rem;
+  -webkit-box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
+  box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
+  letter-spacing: 0.1rem;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: black;
+    transition: 0.5s;
+  }
+
+  &:disabled:hover {
+    border: 1px solid $darkGrey;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .inputContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 0.5fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .formFooter {
+    grid-column-start: 2;
+    grid-row: 2/ 4;
+  }
 }

@@ -1,5 +1,6 @@
 //576
 @use "../../Sass/Variables" as *;
+@use "sass:map";
 
 .searchWithDropdown {
   height: 5rem;
@@ -19,18 +20,32 @@
   margin-bottom: 0.2rem;
   border: 1px solid $darkGrey;
 
-  &:focus-within .input::placeholder {
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    color: black;
-  }
-
-  &:focus-within .icon {
-    color: black;
-  }
-
   &:focus-within {
     border-color: black;
+
+    .icon {
+      color: black;
+    }
+
+    .input::placeholder {
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      color: black;
+    }
+  }
+
+  &:hover {
+    border-color: black;
+
+    .icon {
+      color: black;
+    }
+
+    .input::placeholder {
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      color: black;
+    }
   }
 }
 

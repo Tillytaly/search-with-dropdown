@@ -20,7 +20,6 @@ const filterObjectCallback = (value: any, phrase: string): boolean => {
 };
 
 function filterWith(obj: any[] | [], phrase: string | number) {
-
   if (typeof phrase === "string") {
     if (phrase.length < 2) return [];
   }

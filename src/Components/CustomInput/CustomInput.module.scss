@@ -1,10 +1,11 @@
 @use "../../Sass/Variables" as *;
+@use "sass:map";
 
 .customInputContainer {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: 2rem;
+  height: 8.5rem;
 }
 
 .customInput {
@@ -35,7 +36,7 @@
 
 .error {
   color: $error;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   order: 3;
 }
 
@@ -45,4 +46,10 @@
 
 .inputError + .customInputLabel {
   color: $error;
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .customInput {
+    width: 25rem;
+  }
 }

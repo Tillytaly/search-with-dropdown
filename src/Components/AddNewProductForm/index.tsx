@@ -12,8 +12,10 @@ const {
   button,
   title,
   formHeader,
-  buttonContainer,
+  FHButtonContainer,
   titleContainer,
+  inputContainer,
+  formFooter,
 } = styles;
 
 const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
@@ -56,50 +58,54 @@ const AddNewProductForm = ({ onSubmitData, onCloseForm }: any) => {
     <Wrapper className={formContainer}>
       <form onSubmit={handleSubmit} className={form}>
         <div className={formHeader}>
-          <div className={buttonContainer}>
+          <div className={FHButtonContainer}>
             <CrossBtn onClick={onCloseForm} />
           </div>
           <div className={titleContainer}>
-            <h2 className={title}>New product</h2>
+            <h2 className={title}>New Product</h2>
           </div>
         </div>
-        <CustomInput
-          id="name"
-          label="Name"
-          type="text"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={name}
-          errorMessage={nameErr}
-          touched={isNameTouched}
-        />
-        <CustomInput
-          id="regularPrice"
-          label="Regular price"
-          type="number"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={regularPrice}
-          errorMessage={regularPriceErr}
-          touched={isRegularPriceTouched}
-        />
-        <CustomInput
-          id="salePrice"
-          label="Sale price"
-          type="number"
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={salePrice}
-          errorMessage={salePriceErr}
-          touched={isSalePriceTouched}
-        />
-        <button
-          type="submit"
-          className={button}
-          disabled={!isValid || isSubmitting}
-        >
-          Submit
-        </button>
+        <div className={inputContainer}>
+          <CustomInput
+            id="name"
+            label="Name"
+            type="text"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={name}
+            errorMessage={nameErr}
+            touched={isNameTouched}
+          />
+          <CustomInput
+            id="regularPrice"
+            label="Regular price"
+            type="number"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={regularPrice}
+            errorMessage={regularPriceErr}
+            touched={isRegularPriceTouched}
+          />
+          <CustomInput
+            id="salePrice"
+            label="Sale price"
+            type="number"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={salePrice}
+            errorMessage={salePriceErr}
+            touched={isSalePriceTouched}
+          />
+          <div className={formFooter}>
+            <button
+              type="submit"
+              className={button}
+              disabled={!isValid || isSubmitting}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
       </form>
     </Wrapper>
   );

@@ -10,4 +10,5 @@ export interface CustomInputProps {
   value: string;
   onBlur: (event: FocusEvent) => void;
   touched?: boolean;
+  clasName?: string;
 }

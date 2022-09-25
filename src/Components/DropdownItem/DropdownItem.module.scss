@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../Sass/Variables" as *;
+
 .dropdownItem {
   display: flex;
   align-items: center;
@@ -12,6 +15,7 @@
   display: flex;
   font-size: 1.6rem;
   gap: 1rem;
+  letter-spacing: 0.1rem;
 }
 
 .productNameContainer {
@@ -23,9 +27,15 @@
 }
 
 .newPrice {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .dropdownItem:last-child {
   border-bottom: 1px solid lightgrey;
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .prices {
+    gap: 3rem;
+  }
 }

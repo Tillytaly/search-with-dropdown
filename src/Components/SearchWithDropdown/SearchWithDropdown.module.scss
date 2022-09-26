@@ -1,0 +1,87 @@
+@use "../../Sass/Variables" as *;
+@use "../../Sass/Mixins" as *;
+@use "sass:map";
+
+.searchWithDropdown {
+  height: 5rem;
+  background-color: rgb(206, 197, 197);
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
+}
+
+.inputContainer {
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: right;
+  padding: 0.2rem 0.5rem;
+  background-color: $inputBackground;
+  border: 1px solid $darkGrey;
+  height: 4.2rem;
+
+  &:focus-within {
+    border-color: black;
+
+    .icon {
+      color: black;
+    }
+
+    .input::placeholder {
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      color: black;
+    }
+  }
+
+  &:hover {
+    border-color: black;
+
+    .icon {
+      color: black;
+    }
+
+    .input::placeholder {
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      color: black;
+    }
+  }
+}
+
+.input {
+  width: 85%;
+  border: none;
+  height: 100%;
+  font-size: 2rem;
+  background-color: $inputBackground;
+
+  &::placeholder {
+    font-size: 2rem;
+    color: $darkGrey;
+  }
+}
+
+.iconContainer {
+  width: 10%;
+  @include flexRowCenterBothAxis;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: $darkGrey;
+}
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .searchWithDropdown {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .searchWithDropdown {
+    width: 60rem;
+  }
+}

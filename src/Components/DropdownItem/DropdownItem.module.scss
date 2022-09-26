@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "../../Sass/Variables" as *;
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  gap: 0.5rem;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.prices {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.productNameContainer {
+  font-size: 1.8rem;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.newPrice {
+  font-weight: bold;
+}
+
+.dropdownItem:last-child {
+  border-bottom: 1px solid lightgrey;
+}
+
+.iconContainer {
+  padding: 2.5rem 1rem;
+}
+
+.reactIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: $darkGrey;
+
+  &:hover,
+  &:focus {
+    color: black;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .prices {
+    gap: 3rem;
+  }
+}

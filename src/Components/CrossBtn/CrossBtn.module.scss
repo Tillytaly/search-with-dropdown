@@ -1,0 +1,33 @@
+.crossBtn {
+  padding: 20px 15px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.cross {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  transform: rotate(45deg);
+}
+
+.cross:after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  transform: rotate(-90deg);
+}
+
+.crossBtn:hover {
+  transition: 0.5s;
+  border-radius: 25%;
+  background-color: rgb(246, 239, 239);
+  border: 0.1px rgb(246, 239, 239);
+}
+
+.crossBtn:hover .cross {
+  transition: 0.2s;
+  transform: rotate(315deg);
+}

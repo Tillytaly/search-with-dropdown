@@ -1,0 +1,79 @@
+@use "../../Sass//Variables" as *;
+@use "../../Sass/Mixins" as *;
+@use "sass:map";
+
+.formContainer {
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
+  color: rgba(21, 19, 19, 0.704);
+  border: 1px solid $darkGrey;
+  border-radius: 0.8rem;
+  background-color: $inputBackground;
+}
+
+.formHeader {
+  width: 100%;
+}
+
+.FHButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleContainer {
+  text-align: center;
+}
+
+.form {
+  @include flexColumnCenterAxisX;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+.button {
+  width: 20rem;
+  margin: 2rem;
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+
+  &:disabled:hover {
+    border: 1px solid $darkGrey;
+  }
+}
+
+.inputContainer {
+  @include flexColumnCenterAxisX;
+  gap: 1rem;
+}
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .formContainer {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .formContainer {
+    width: 70rem;
+  }
+
+  .inputContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 0.5fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .formFooter {
+    grid-column-start: 2;
+    grid-row: 2/ 4;
+  }
+}

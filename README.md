@@ -16,6 +16,7 @@ Tech stack inside of the project(besides JS and React):
 
 You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/).
 Currently available products in the app:
+```
  {
     name: "Fixed TOC - table of contents for WordPress plugin",
     regularPrice: "20",
@@ -34,7 +35,7 @@ Currently available products in the app:
     salePrice: "21",
     id: uuid(),
   }
-  
+  ```
   You can add and delete products to check how the app works. Search will find the item after third matching letter.
 
 

@@ -1,4 +1,3 @@
-import { PropsWithOnSubmitData } from "../../Types";
 
 interface inputState {
   value: string;

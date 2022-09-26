@@ -6,13 +6,6 @@ export interface ProductData {
   salePrice:  string
 }
 
-export interface PropsWithOnSubmitData {
-  onSubmitData: Dispatch<SetStateAction<ProductData[]>>;
-}
-
-export interface PropsWithListItems {
-  listItems: ProductData[];
-}
 
 export interface UseSearchWithDropdown<T> {
   itemListToDisplay: any[];
@@ -24,4 +17,8 @@ export interface UseSearchWithDropdown<T> {
 
 export interface PropsWithChildren {
   children: React.ReactNode;
+}
+
+export interface PropsWithClassName{
+  className: string;
 }

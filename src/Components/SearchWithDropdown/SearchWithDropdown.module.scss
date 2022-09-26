@@ -4,10 +4,7 @@
 
 .searchWithDropdown {
   height: 5rem;
-  padding: 0.5rem;
   background-color: rgb(206, 197, 197);
-  min-width: 30rem;
-  border-radius: 0.8rem;
 }
 
 .inputContainer {
@@ -15,10 +12,10 @@
   border-radius: 2rem;
   display: flex;
   justify-content: right;
-  padding: 0.5rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   background-color: $inputBackground;
-  margin-bottom: 0.2rem;
   border: 1px solid $darkGrey;
+  height: 4.2rem;
 
   &:focus-within {
     border-color: black;
@@ -52,7 +49,7 @@
 .input {
   width: 85%;
   border: none;
-  height: 3rem;
+  height: 100%;
   font-size: 2rem;
   background-color: $inputBackground;
 

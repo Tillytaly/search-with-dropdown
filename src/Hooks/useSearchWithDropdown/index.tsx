@@ -8,6 +8,7 @@ function useSearchWithDropdown<T extends ObjectWithId>(
 ): UseSearchWithDropdown<T> {
   const [searchedPhrase, setSearchedPhrase] = useState("");
   const [filteredItemList, setFilteredItemList] = useState(itemList);
+  console.log(filteredItemList)
 
   const addItemToList = useCallback((newProduct: T) => {
     setFilteredItemList((prevItemList) => [...prevItemList, newProduct]);

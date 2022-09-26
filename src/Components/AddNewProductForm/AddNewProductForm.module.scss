@@ -37,21 +37,7 @@
   width: 20rem;
   margin: 2rem;
   font-size: 2.2rem;
-  border-radius: 1rem;
-  border: 1px solid $darkGrey;
-  background-color: rgb(206, 197, 197);
-  height: 3.5rem;
-  -webkit-box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
-  box-shadow: 7px 10px 27px -15px rgba(66, 68, 90, 1);
   letter-spacing: 0.1rem;
-
-  &:active,
-  &:focus,
-  &:hover {
-    border-color: black;
-    transition: 0.5s;
-  }
 
   &:disabled:hover {
     border: 1px solid $darkGrey;

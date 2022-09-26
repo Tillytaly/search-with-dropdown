@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AddNewProductForm } from "../AddNewProductForm";
 import { Wrapper } from "../Wrapper";
+import { CustomButton } from "../CustomButton";
 import styles from "./AddNewProduct.module.scss";
 
 const { buttonContainer, button } = styles;
@@ -22,9 +23,9 @@ const AddNewProduct = () => {
 
   return (
     <Wrapper className={buttonContainer}>
-      <button onClick={openForm} type="button" className={button}>
+      <CustomButton onClick={openForm} type="button" className={button}>
         Add New Product
-      </button>
+      </CustomButton>
     </Wrapper>
   );
 };

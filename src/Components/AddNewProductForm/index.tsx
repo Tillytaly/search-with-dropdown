@@ -2,6 +2,7 @@ import { CustomInput } from "../CustomInput";
 import { useFormik } from "formik";
 import { formikSchema } from "../../Validation";
 import { CrossBtn } from "../CrossBtn";
+import { CustomButton } from "../CustomButton";
 import { Wrapper } from "../Wrapper";
 import { AddNewProductFormProps } from "./types";
 import { v4 as uuid } from "uuid";
@@ -50,7 +51,7 @@ const AddNewProductForm = ({ onCloseForm }: AddNewProductFormProps) => {
     onSubmit: (values, { resetForm }) => {
       const { name, regularPrice, salePrice } = values;
       const id = uuid();
-      const newProduct = { id, name, regularPrice, salePrice }
+      const newProduct = { id, name, regularPrice, salePrice };
 
       addItemToList(newProduct);
       resetForm();
@@ -101,13 +102,13 @@ const AddNewProductForm = ({ onCloseForm }: AddNewProductFormProps) => {
             touched={isSalePriceTouched}
           />
           <div className={formFooter}>
-            <button
+            <CustomButton
               type="submit"
               className={button}
               disabled={!isValid || isSubmitting}
             >
               Submit
-            </button>
+            </CustomButton>
           </div>
         </div>
       </form>

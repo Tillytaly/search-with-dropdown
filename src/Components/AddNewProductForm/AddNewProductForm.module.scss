@@ -3,6 +3,9 @@
 @use "sass:map";
 
 .formContainer {
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
   color: rgba(21, 19, 19, 0.704);
   border: 1px solid $darkGrey;
   border-radius: 0.8rem;

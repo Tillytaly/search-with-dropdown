@@ -14,7 +14,28 @@ Tech stack inside of the project(besides JS and React):
 [ReactIcons](https://react-icons.github.io/react-icons/)
 
 
-You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/)
+You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/).
+Currently available products in the app:
+ {
+    name: "Fixed TOC - table of contents for WordPress plugin",
+    regularPrice: "20",
+    salePrice: "3.99",
+    id: uuid(),
+  },
+  {
+    name: "Jobify - The Most Popular WordpPress Job Board Theme",
+    regularPrice: "59",
+    salePrice: "3.99",
+    id: uuid(),
+  },
+  {
+    name: "Lorem ipsum",
+    regularPrice: "99",
+    salePrice: "21",
+    id: uuid(),
+  }
+  
+  You can add and delete products to check how the app works. Search will find the item after third matching letter.
 
 
 ## Installation 

@@ -1,17 +1,20 @@
 import { DropdownItem } from "../DropdownItem";
 import { v4 as uuid } from "uuid";
 import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
+import styles from "./DropdownList.module.scss";
+
+const { messageContainer } = styles;
+
 const DropdownList = () => {
   const { itemListToDisplay, searchedPhrase } = useSearchWithDropdownContext();
-
   const areNoProductsFound =
     itemListToDisplay.length === 0 && searchedPhrase.length > 2;
 
   if (areNoProductsFound) {
     return (
-      <>
-        <p>No products found.</p>
-      </>
+      <div className={messageContainer}>
+        <p>No products found</p>
+      </div>
     );
   }
   return (

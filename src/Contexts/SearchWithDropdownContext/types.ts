@@ -1,5 +1,10 @@
-import {UseSearchWithDropdown, ProductData, PropsWithChildren} from "../../Types"
+import {
+  UseSearchWithDropdown,
+  ProductData,
+  PropsWithChildren,
+} from "../../Types";
 
-export interface ISearchWithDropdownContext extends UseSearchWithDropdown<ProductData>{}
+export interface ISearchWithDropdownContext
+  extends UseSearchWithDropdown<ProductData> {}
 
-export interface SearchWithDropdownProviderProps extends PropsWithChildren{}
+export interface SearchWithDropdownProviderProps extends PropsWithChildren {}

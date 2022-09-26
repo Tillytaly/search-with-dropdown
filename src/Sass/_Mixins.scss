@@ -1,0 +1,11 @@
+@mixin flexColumnCenterAxisX {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flexRowCenterBothAxis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

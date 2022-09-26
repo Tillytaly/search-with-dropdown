@@ -1,5 +1,5 @@
-//576
 @use "../../Sass/Variables" as *;
+@use "../../Sass/Mixins" as *;
 @use "sass:map";
 
 .searchWithDropdown {
@@ -64,9 +64,7 @@
 
 .iconContainer {
   width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexRowCenterBothAxis;
 }
 
 .icon {
@@ -74,7 +72,6 @@
   height: 2.5rem;
   color: $darkGrey;
 }
-
 
 @media screen and (min-width: map.get($breakpoints, "sm")) {
   .searchWithDropdown {

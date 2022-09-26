@@ -19,9 +19,9 @@ const DropdownItem = ({
   title,
   regularPrice,
   salePrice,
-  id
+  id,
 }: DropdownItemProps) => {
-  const {removeItemFromList} = useSearchWithDropdownContext()
+  const { removeItemFromList } = useSearchWithDropdownContext();
   return (
     <div className={dropdownItem}>
       <div className={productNameContainer}>
@@ -38,7 +38,7 @@ const DropdownItem = ({
         </div>
         <div className={iconContainer}>
           <IconContextProvider className={reactIcon}>
-            <FaTrashAlt onClick={() => removeItemFromList(id)}/>
+            <FaTrashAlt onClick={() => removeItemFromList(id)} />
           </IconContextProvider>
         </div>
       </div>

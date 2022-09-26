@@ -4,6 +4,6 @@ export interface CustomButtonProps
   extends PropsWithClassName,
     PropsWithChildren {
   type: "submit" | "button";
-  onClick?: (arg?:any) => void;
+  onClick?: (arg?: any) => void;
   disabled?: boolean;
 }

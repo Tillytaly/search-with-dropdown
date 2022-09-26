@@ -1,10 +1,9 @@
 @use "../../Sass/Variables" as *;
+@use "../../Sass/Mixins" as *;
 @use "sass:map";
 
 .buttonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexRowCenterBothAxis;
   height: 7rem;
   background-color: $inputBackground;
   width: 80%;

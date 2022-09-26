@@ -7,7 +7,9 @@
   align-items: center;
   height: 7rem;
   background-color: $inputBackground;
-  border-radius: 0.8rem;
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
 }
 
 .button {
@@ -15,4 +17,17 @@
   margin: 2rem;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .buttonContainer {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .buttonContainer {
+    width: 70rem;
+  }
 }

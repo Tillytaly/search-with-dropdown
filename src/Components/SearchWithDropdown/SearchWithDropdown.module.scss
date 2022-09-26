@@ -5,6 +5,9 @@
 .searchWithDropdown {
   height: 5rem;
   background-color: rgb(206, 197, 197);
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
 }
 
 .inputContainer {
@@ -70,4 +73,18 @@
   width: 2.5rem;
   height: 2.5rem;
   color: $darkGrey;
+}
+
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .searchWithDropdown {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .searchWithDropdown {
+    width: 60rem;
+  }
 }

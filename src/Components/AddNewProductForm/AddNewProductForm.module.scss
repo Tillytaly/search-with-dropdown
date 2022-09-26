@@ -51,7 +51,18 @@
   gap: 1rem;
 }
 
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .formContainer {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
 @media screen and (min-width: map.get($breakpoints, "md")) {
+  .formContainer {
+    width: 70rem;
+  }
+
   .inputContainer {
     width: 100%;
     display: grid;

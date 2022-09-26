@@ -13,7 +13,7 @@ const DropdownList = () => {
   if (areNoProductsFound) {
     return (
       <div className={messageContainer}>
-        <p>No products found</p>
+        <p>No results found</p>
       </div>
     );
   }

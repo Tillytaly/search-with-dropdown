@@ -1,5 +1,5 @@
+@use "../../Sass/Variables" as *;
 .messageContainer {
-  padding: 3rem 0.5rem;
-  border-bottom: 1px solid lightgrey;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  color: $darkGrey;
 }

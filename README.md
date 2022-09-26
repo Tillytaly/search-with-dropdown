@@ -23,7 +23,7 @@ In order to open the project locally make sure you have [Node.js](https://nodejs
 Use the console in your favourite IDE to clone the repository
 
 ```bash
-git clone https://github.com/Tillytaly/InfiniteScroll.git
+git clone https://github.com/Tillytaly/search-with-dropdown.git
 ```
 
 Navigate to the project directory:

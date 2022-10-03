@@ -14,7 +14,7 @@ Tech stack inside of the project(besides JS and React):
 [ReactIcons](https://react-icons.github.io/react-icons/)
 
 
-You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/).
+You can checkout my project live here [search-with-dropdown](https://tillytaly.github.io/search-with-dropdown/)
 Currently available products in the app:
 ```
  {

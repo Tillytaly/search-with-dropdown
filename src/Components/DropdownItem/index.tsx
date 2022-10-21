@@ -1,5 +1,4 @@
 import { FaTrashAlt } from "react-icons/fa";
-import { IconContextProvider } from "../../Contexts";
 import { DropdownItemProps } from "./types";
 import styles from "./DropdownItem.module.scss";
 import { useProductStoreContext } from "../../Contexts/";
@@ -37,9 +36,7 @@ const DropdownItem = ({
           </div>
         </div>
         <div className={iconContainer}>
-          <IconContextProvider className={reactIcon}>
-            <FaTrashAlt onClick={() => removeProduct(id)} />
-          </IconContextProvider>
+            <FaTrashAlt className={reactIcon} onClick={() => removeProduct(id)} />
         </div>
       </div>
     </div>

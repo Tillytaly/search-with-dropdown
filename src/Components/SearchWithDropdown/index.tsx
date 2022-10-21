@@ -1,6 +1,5 @@
 import styles from "./SearchWithDropdown.module.scss";
 import { RiSearchLine } from "react-icons/ri";
-import { IconContextProvider } from "../../Contexts";
 import { DropdownList } from "../DropdownList";
 import { Wrapper } from "../Wrapper";
 import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
@@ -31,9 +30,7 @@ const SearchWithDropdown = () => {
           placeholder="Search"
         ></input>
         <div className={iconContainer}>
-          <IconContextProvider className={icon}>
-            <RiSearchLine />
-          </IconContextProvider>
+            <RiSearchLine className={icon}/>
         </div>
       </div>
       <DropdownList />

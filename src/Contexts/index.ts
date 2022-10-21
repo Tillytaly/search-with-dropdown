@@ -1,4 +1,3 @@
-export { IconContextProvider } from "./ReactIconContext";
 export {
   ProductStoreProvider,
   useProductStoreContext,

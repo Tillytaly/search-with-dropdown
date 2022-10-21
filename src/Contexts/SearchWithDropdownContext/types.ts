@@ -1,8 +1,6 @@
-import {
-  UseSearchWithDropdown,
-  ProductData,
-  PropsWithChildren,
-} from "../../Types";
+import { UseSearchWithDropdown, ProductData } from "../../Types";
+
+import { PropsWithChildren } from "react";
 
 export interface ISearchWithDropdownContext
   extends UseSearchWithDropdown<ProductData> {}

@@ -4,7 +4,7 @@ import {
   SearchWithDropdownProviderProps,
 } from "./types";
 import { useSearchWithDropdown } from "../../Hooks/useSearchWithDropdown";
-import { initialSearchData } from "../../dummyData";
+import { useProductStoreContext } from "../ProductStoreContext";
 
 const SearchWithDropdownContext =
   createContext<null | ISearchWithDropdownContext>(null);
@@ -12,20 +12,15 @@ const SearchWithDropdownContext =
 export const SearchWithDropdownProvider = ({
   children,
 }: SearchWithDropdownProviderProps) => {
-  const {
-    addItemToList,
-    onSearchedPhraseChange,
-    searchedPhrase,
-    removeItemFromList,
-    itemListToDisplay,
-  } = useSearchWithDropdown(initialSearchData);
+  const { availableProducts } = useProductStoreContext();
+  const { onSearchedPhraseChange, searchedPhrase, itemListToDisplay } =
+    useSearchWithDropdown(availableProducts);
+
 
   return (
     <SearchWithDropdownContext.Provider
       value={{
-        addItemToList,
         onSearchedPhraseChange,
-        removeItemFromList,
         searchedPhrase,
         itemListToDisplay,
       }}

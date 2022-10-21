@@ -10,8 +10,6 @@ export interface UseSearchWithDropdown<T> {
   itemListToDisplay: any[];
   onSearchedPhraseChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   searchedPhrase: string;
-  removeItemFromList: (idOfItemToRemove: string) => void;
-  addItemToList: (newProduct: T) => void;
 }
 
 export interface PropsWithChildren {

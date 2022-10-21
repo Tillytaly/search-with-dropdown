@@ -1,4 +1,3 @@
-export {};
 import { ProductData } from "../../Types";
 import { createContext, useContext, useState, useCallback } from "react";
 import { initialSearchData } from "../../dummyData";
@@ -25,12 +24,15 @@ export const ProductStoreProvider = ({
       ({ id }) => id === productId
     );
 
+console.log(indexOfItemToRemove)
+
     if (indexOfItemToRemove === -1) return;
 
     copiedProductStore.splice(indexOfItemToRemove, 1);
+    console.log(copiedProductStore)
 
     setAvailableProducts(copiedProductStore);
-  }, []);
+  }, [availableProducts]);
 
   return (
     <ProductStoreContext.Provider

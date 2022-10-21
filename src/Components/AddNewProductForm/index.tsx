@@ -6,7 +6,7 @@ import { CustomButton } from "../CustomButton";
 import { Wrapper } from "../Wrapper";
 import { AddNewProductFormProps } from "./types";
 import { v4 as uuid } from "uuid";
-import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
+import { useProductStoreContext } from "../../Contexts/";
 import styles from "./AddNewProductForm.module.scss";
 
 const {
@@ -22,7 +22,7 @@ const {
 } = styles;
 
 const AddNewProductForm = ({ onCloseForm }: AddNewProductFormProps) => {
-  const { addItemToList } = useSearchWithDropdownContext();
+  const { addProduct } = useProductStoreContext();
 
   const {
     handleChange,
@@ -53,7 +53,7 @@ const AddNewProductForm = ({ onCloseForm }: AddNewProductFormProps) => {
       const id = uuid();
       const newProduct = { id, name, regularPrice, salePrice };
 
-      addItemToList(newProduct);
+      addProduct(newProduct);
       resetForm();
     },
     validateOnChange: false,

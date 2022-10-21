@@ -2,7 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { IconContextProvider } from "../../Contexts";
 import { DropdownItemProps } from "./types";
 import styles from "./DropdownItem.module.scss";
-import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
+import { useProductStoreContext } from "../../Contexts/";
 
 const {
   dropdownItem,
@@ -21,7 +21,7 @@ const DropdownItem = ({
   salePrice,
   id,
 }: DropdownItemProps) => {
-  const { removeItemFromList } = useSearchWithDropdownContext();
+  const { removeProduct } = useProductStoreContext();
   return (
     <div className={dropdownItem}>
       <div className={productNameContainer}>
@@ -38,7 +38,7 @@ const DropdownItem = ({
         </div>
         <div className={iconContainer}>
           <IconContextProvider className={reactIcon}>
-            <FaTrashAlt onClick={() => removeItemFromList(id)} />
+            <FaTrashAlt onClick={() => removeProduct(id)} />
           </IconContextProvider>
         </div>
       </div>

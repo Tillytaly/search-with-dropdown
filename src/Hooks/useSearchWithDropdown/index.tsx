@@ -7,27 +7,6 @@ function useSearchWithDropdown<T extends ObjectWithId>(
   itemList: T[]
 ): UseSearchWithDropdown<T> {
   const [searchedPhrase, setSearchedPhrase] = useState("");
-  const [filteredItemList, setFilteredItemList] = useState(itemList);
-
-  const addItemToList = useCallback((newProduct: T) => {
-    setFilteredItemList((prevItemList) => [...prevItemList, newProduct]);
-  }, []);
-
-  const removeItemFromList = useCallback(
-    (idOfItemToRemove: string) => {
-      const copiedArray = [...filteredItemList];
-      const indexOfItemToRemove = copiedArray.findIndex(
-        ({ id }) => id === idOfItemToRemove
-      );
-
-      if (indexOfItemToRemove === -1) return;
-
-      copiedArray.splice(indexOfItemToRemove, 1);
-
-      setFilteredItemList(copiedArray);
-    },
-    [filteredItemList]
-  );
 
   const onSearchedPhraseChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,15 +19,13 @@ function useSearchWithDropdown<T extends ObjectWithId>(
   );
 
   const itemListToDisplay = useMemo(() => {
-    return filterWith(filteredItemList, searchedPhrase);
-  }, [filteredItemList, searchedPhrase]);
+    return filterWith(itemList, searchedPhrase);
+  }, [itemList, searchedPhrase]);
 
   return {
     itemListToDisplay,
     onSearchedPhraseChange,
     searchedPhrase,
-    removeItemFromList,
-    addItemToList,
   };
 }
 

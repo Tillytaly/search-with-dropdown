@@ -11,10 +11,6 @@ export interface UseSearchWithDropdown<T> {
   searchedPhrase: string;
 }
 
-export interface PropsWithChildren {
-  children: React.ReactNode;
-}
-
 export interface PropsWithClassName {
   className: string;
 }

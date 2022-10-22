@@ -1,4 +1,4 @@
-import { useCallback, useRef, MutableRefObject } from "react";
+import { useCallback, useRef } from "react";
 import { DropdownList } from "../DropdownList";
 import { Wrapper } from "../Wrapper";
 import { RiSearchLine } from "react-icons/ri";

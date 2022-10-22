@@ -1,4 +1,5 @@
-import { PropsWithClassName, PropsWithChildren } from "../../Types";
+import { PropsWithClassName } from "../../Types";
+import { PropsWithChildren } from "react";
 
 export interface CustomButtonProps
   extends PropsWithClassName,

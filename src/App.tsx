@@ -5,12 +5,10 @@ import "./App.css";
 
 function App() {
   return (
-    <SearchWithDropdownProvider>
-      <div className="App">
-        <AddNewProduct />
-        <SearchWithDropdown />
-      </div>
-    </SearchWithDropdownProvider>
+    <div className="App">
+      <AddNewProduct />
+      <SearchWithDropdown />
+    </div>
   );
 }
 

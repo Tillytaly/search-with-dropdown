@@ -1,39 +1,37 @@
-import styles from "./SearchWithDropdown.module.scss";
-import { RiSearchLine } from "react-icons/ri";
-import { IconContextProvider } from "../../Contexts";
+import { useCallback, useRef } from "react";
 import { DropdownList } from "../DropdownList";
 import { Wrapper } from "../Wrapper";
+import { RiSearchLine } from "react-icons/ri";
 import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
-import { useCallback } from "react";
+
+import styles from "./SearchWithDropdown.module.scss";
 
 const { searchWithDropdown, inputContainer, input, iconContainer, icon } =
   styles;
 
 const SearchWithDropdown = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const { onSearchedPhraseChange } = useSearchWithDropdownContext();
 
-  const onContainerClick = useCallback((inputClassName: string) => {
-    const inputToFocus = document.querySelector(
-      `.${inputClassName}`
-    ) as HTMLInputElement;
-
-    inputToFocus.focus();
+  const onContainerClick = useCallback(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   }, []);
 
   return (
     <Wrapper className={searchWithDropdown}>
-      <div className={inputContainer} onClick={() => onContainerClick(input)}>
+      <div className={inputContainer} onClick={onContainerClick}>
         <label htmlFor="searchField"></label>
         <input
           className={input}
           onChange={onSearchedPhraseChange}
           id="searchField"
           placeholder="Search"
+          ref={inputRef}
         ></input>
         <div className={iconContainer}>
-          <IconContextProvider className={icon}>
-            <RiSearchLine />
-          </IconContextProvider>
+          <RiSearchLine className={icon} />
         </div>
       </div>
       <DropdownList />

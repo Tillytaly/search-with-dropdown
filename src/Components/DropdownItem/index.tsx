@@ -36,7 +36,7 @@ const DropdownItem = ({
           </div>
         </div>
         <div className={iconContainer}>
-            <FaTrashAlt className={reactIcon} onClick={() => removeProduct(id)} />
+          <FaTrashAlt className={reactIcon} onClick={() => removeProduct(id)} />
         </div>
       </div>
     </div>

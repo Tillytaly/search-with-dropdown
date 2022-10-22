@@ -16,7 +16,6 @@ export const SearchWithDropdownProvider = ({
   const { onSearchedPhraseChange, searchedPhrase, itemListToDisplay } =
     useSearchWithDropdown(availableProducts);
 
-
   return (
     <SearchWithDropdownContext.Provider
       value={{

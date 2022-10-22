@@ -5,11 +5,10 @@ import "./App.css";
 
 function App() {
   return (
-  
-      <div className="App">
-        <AddNewProduct />
-        <SearchWithDropdown />
-      </div>
+    <div className="App">
+      <AddNewProduct />
+      <SearchWithDropdown />
+    </div>
   );
 }
 

@@ -18,21 +18,24 @@ export const ProductStoreProvider = ({
     });
   }, []);
 
-  const removeProduct = useCallback((productId: string) => {
-    const copiedProductStore = [...availableProducts];
-    const indexOfItemToRemove = copiedProductStore.findIndex(
-      ({ id }) => id === productId
-    );
+  const removeProduct = useCallback(
+    (productId: string) => {
+      const copiedProductStore = [...availableProducts];
+      const indexOfItemToRemove = copiedProductStore.findIndex(
+        ({ id }) => id === productId
+      );
 
-console.log(indexOfItemToRemove)
+      console.log(indexOfItemToRemove);
 
-    if (indexOfItemToRemove === -1) return;
+      if (indexOfItemToRemove === -1) return;
 
-    copiedProductStore.splice(indexOfItemToRemove, 1);
-    console.log(copiedProductStore)
+      copiedProductStore.splice(indexOfItemToRemove, 1);
+      console.log(copiedProductStore);
 
-    setAvailableProducts(copiedProductStore);
-  }, [availableProducts]);
+      setAvailableProducts(copiedProductStore);
+    },
+    [availableProducts]
+  );
 
   return (
     <ProductStoreContext.Provider

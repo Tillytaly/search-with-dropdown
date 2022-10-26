@@ -1,6 +1,6 @@
 import { CustomButtonProps } from "./types";
-import styles from "./CustomButton.module.scss";
 
+import styles from "./CustomButton.module.scss";
 const { customButton } = styles;
 
 const CustomButton = ({
@@ -10,9 +10,11 @@ const CustomButton = ({
   disabled,
   onClick,
 }: CustomButtonProps) => {
+  const buttonClassName = `${className} ${customButton}`;
+  
   return (
     <button
-      className={`${className} ${customButton}`}
+      className={buttonClassName}
       type={type}
       disabled={disabled}
       onClick={onClick}

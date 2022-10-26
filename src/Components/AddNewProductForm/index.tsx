@@ -1,14 +1,11 @@
-import { CustomInput } from "../CustomInput";
 import { useFormik } from "formik";
 import { formikSchema } from "../../Validation";
-import { CrossBtn } from "../CrossBtn";
-import { CustomButton } from "../CustomButton";
-import { Wrapper } from "../Wrapper";
-import { AddNewProductFormProps } from "./types";
 import { v4 as uuid } from "uuid";
+import { CrossBtn, CustomInput, CustomButton, Wrapper } from "../index";
 import { useProductStoreContext } from "../../Contexts/";
-import styles from "./AddNewProductForm.module.scss";
+import { AddNewProductFormProps } from "./types";
 
+import styles from "./rwd.module.scss";
 const {
   form,
   formContainer,

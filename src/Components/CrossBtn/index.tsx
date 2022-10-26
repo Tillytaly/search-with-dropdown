@@ -1,17 +1,14 @@
-import { Component } from "react";
+import { TCrossBtnProps } from "./types";
+
 import styles from "./CrossBtn.module.scss";
-import { TCrossBtn } from "./types";
 const { crossBtn, cross } = styles;
 
-class CrossBtn extends Component<TCrossBtn> {
-  render() {
-    const { onClick } = this.props;
-    return (
-      <div className={crossBtn} onClick={onClick}>
-        <div className={cross}></div>
-      </div>
-    );
-  }
-}
+const CrossBtn = ({ onClick }: TCrossBtnProps) => {
+  return (
+    <div className={crossBtn} onClick={onClick}>
+      <div className={cross}></div>
+    </div>
+  );
+};
 
 export { CrossBtn };

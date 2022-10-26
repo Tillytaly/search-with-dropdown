@@ -28,10 +28,10 @@
   &:hover + .customInputLabel {
     font-weight: bold;
   }
-}
 
-.customInputLabel {
-  font-size: 1.8rem;
+  &Label {
+    font-size: 1.8rem;
+  }
 }
 
 .error {
@@ -46,10 +46,4 @@
 
 .inputError + .customInputLabel {
   color: $error;
-}
-
-@media screen and (min-width: map.get($breakpoints, "md")) {
-  .customInput {
-    width: 25rem;
-  }
 }

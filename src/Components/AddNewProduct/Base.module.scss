@@ -17,16 +17,3 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
-
-@media screen and (min-width: map.get($breakpoints, "sm")) {
-  .buttonContainer {
-    width: 50rem;
-    max-width: none;
-  }
-}
-
-@media screen and (min-width: map.get($breakpoints, "md")) {
-  .buttonContainer {
-    width: 70rem;
-  }
-}

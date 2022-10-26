@@ -1,0 +1,17 @@
+@use "./Base.module.scss";
+@use "../../Sass/Variables" as *;
+@use "../../Sass/Mixins" as *;
+@use "sass:map";
+
+@media screen and (min-width: map.get($breakpoints, "sm")) {
+  .buttonContainer {
+    width: 50rem;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .buttonContainer {
+    width: 70rem;
+  }
+}

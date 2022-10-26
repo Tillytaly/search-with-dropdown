@@ -1,8 +1,7 @@
 import { DropdownItem } from "../DropdownItem";
-import { v4 as uuid } from "uuid";
 import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
-import styles from "./DropdownList.module.scss";
 
+import styles from "./DropdownList.module.scss";
 const { messageContainer } = styles;
 
 const DropdownList = () => {
@@ -19,14 +18,8 @@ const DropdownList = () => {
   }
   return (
     <>
-      {itemListToDisplay.map(({ id, name, regularPrice, salePrice }) => (
-        <DropdownItem
-          key={uuid()}
-          id={id}
-          title={name}
-          regularPrice={regularPrice}
-          salePrice={salePrice}
-        />
+      {itemListToDisplay.map((item) => (
+        <DropdownItem key={item.id + item.name} {...item} />
       ))}
     </>
   );

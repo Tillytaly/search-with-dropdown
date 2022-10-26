@@ -1,5 +1,6 @@
-import styles from "./CustomInput.module.scss";
 import { CustomInputProps } from "./types";
+
+import styles from "./rwd.module.scss";
 const {
   customInputContainer,
   customInput,
@@ -13,11 +14,11 @@ const CustomInput = ({
   type,
   label,
   placeholder,
-  onChange,
   errorMessage,
   value,
-  onBlur,
   touched,
+  onBlur,
+  onChange,
 }: CustomInputProps) => {
   const shouldDisplayErrorMessage = touched && errorMessage;
 
@@ -30,8 +31,8 @@ const CustomInput = ({
         className={`${customInput} ${
           shouldDisplayErrorMessage ? inputError : ""
         }`}
-        onChange={onChange}
         value={value}
+        onChange={onChange}
         onBlur={onBlur}
       ></input>
       <label htmlFor={id} className={customInputLabel}>

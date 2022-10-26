@@ -1,3 +1,3 @@
-export type TCrossBtn = {
+export type TCrossBtnProps = {
   onClick: () => void;
 };

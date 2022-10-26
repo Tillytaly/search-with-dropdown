@@ -25,12 +25,9 @@ export const ProductStoreProvider = ({
         ({ id }) => id === productId
       );
 
-      console.log(indexOfItemToRemove);
-
       if (indexOfItemToRemove === -1) return;
 
       copiedProductStore.splice(indexOfItemToRemove, 1);
-      console.log(copiedProductStore);
 
       setAvailableProducts(copiedProductStore);
     },

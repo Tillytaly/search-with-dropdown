@@ -2,8 +2,8 @@ import { useState } from "react";
 import { AddNewProductForm } from "../AddNewProductForm";
 import { Wrapper } from "../Wrapper";
 import { CustomButton } from "../CustomButton";
-import styles from "./AddNewProduct.module.scss";
 
+import styles from "./Base.module.scss";
 const { buttonContainer, button } = styles;
 
 const AddNewProduct = () => {

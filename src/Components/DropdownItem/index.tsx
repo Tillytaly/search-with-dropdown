@@ -1,8 +1,8 @@
 import { FaTrashAlt } from "react-icons/fa";
 import { DropdownItemProps } from "./types";
-import styles from "./DropdownItem.module.scss";
 import { useProductStoreContext } from "../../Contexts/";
 
+import styles from "./DropdownItem.module.scss";
 const {
   dropdownItem,
   productNameContainer,
@@ -15,16 +15,17 @@ const {
 } = styles;
 
 const DropdownItem = ({
-  title,
+  name,
   regularPrice,
   salePrice,
   id,
 }: DropdownItemProps) => {
   const { removeProduct } = useProductStoreContext();
+
   return (
     <div className={dropdownItem}>
       <div className={productNameContainer}>
-        <p>{title}</p>
+        <p>{name}</p>
       </div>
       <div className={flexContainer}>
         <div className={prices}>

@@ -50,30 +50,3 @@
   @include flexColumnCenterAxisX;
   gap: 1rem;
 }
-
-@media screen and (min-width: map.get($breakpoints, "sm")) {
-  .formContainer {
-    width: 50rem;
-    max-width: none;
-  }
-}
-
-@media screen and (min-width: map.get($breakpoints, "md")) {
-  .formContainer {
-    width: 70rem;
-  }
-
-  .inputContainer {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr) 0.5fr;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .formFooter {
-    grid-column-start: 2;
-    grid-row: 2/ 4;
-  }
-}

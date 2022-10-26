@@ -6,7 +6,7 @@ export interface ProductData {
 }
 
 export interface UseSearchWithDropdown<T> {
-  itemListToDisplay: any[];
+  itemListToDisplay: T[];
   onSearchedPhraseChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   searchedPhrase: string;
 }

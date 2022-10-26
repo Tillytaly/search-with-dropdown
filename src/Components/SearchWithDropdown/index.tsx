@@ -1,11 +1,10 @@
 import { useCallback, useRef } from "react";
-import { DropdownList } from "../DropdownList";
-import { Wrapper } from "../Wrapper";
 import { RiSearchLine } from "react-icons/ri";
+import { DropdownList, Wrapper } from "../index";
+
 import { useSearchWithDropdownContext } from "../../Contexts/SearchWithDropdownContext";
 
 import styles from "./SearchWithDropdown.module.scss";
-
 const { searchWithDropdown, inputContainer, input, iconContainer, icon } =
   styles;
 

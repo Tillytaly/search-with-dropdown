@@ -1,0 +1,19 @@
+@use "../../Sass/Variables" as *;
+@use "../../Sass/Mixins" as *;
+@use "sass:map";
+
+.buttonContainer {
+  @include flexRowCenterBothAxis;
+  height: 7rem;
+  background-color: $inputBackground;
+  width: 80%;
+  min-width: 30rem;
+  max-width: 40rem;
+}
+
+.button {
+  width: 25rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

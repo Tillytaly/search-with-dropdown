@@ -1,0 +1,9 @@
+@use "../../Sass/Variables" as *;
+@use "sass:map";
+@use "./base.module.scss";
+
+@media screen and (min-width: map.get($breakpoints, "md")) {
+  .customInput {
+    width: 25rem;
+  }
+}

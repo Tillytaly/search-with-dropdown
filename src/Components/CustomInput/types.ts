@@ -1,14 +1,14 @@
-import { FocusEvent, ChangeEvent } from "react";
+import { FocusEvent, ChangeEvent, ChangeEventHandler } from "react";
 
 export interface CustomInputProps {
   id: string;
   type: string;
   label: string;
-  placeholder?: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  errorMessage?: string;
   value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: FocusEvent) => void;
+  placeholder?: string;
+  errorMessage?: string;
   touched?: boolean;
   clasName?: string;
 }
